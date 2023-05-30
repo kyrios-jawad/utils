@@ -24,3 +24,7 @@ const encodeQueryData = (query) =>{
     ret.push(encodeURIComponent(d) + '=' + encodeURIComponent(query[d]));
   return ret.join('&');
 }
+// remove duplicate objects
+let unique = data.filter(
+  (item, index, self) => index === self.findIndex((t) => t.id === item.id)
+);
